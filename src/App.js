@@ -3,7 +3,6 @@ import TopForm from './TopForm';
 
 
 const App =() => {
-
     return (
 
         <div className='container w-100 h-100 p-3'>
@@ -14,14 +13,16 @@ const App =() => {
                         Worke #1
                         <span>
                             <i className='me-3 poimer fas fa-check text-success transition_200 text_hover_shadow'></i>
-                            <i className='me-3 poimer fas fa-check text-warning transition_200 text_hover_shadow'></i>
-                            <i className='me-3 poimer fas fa-check text-danger transition_200 text_hover_shadow'></i>
+                            <i className='me-3 poimer fas fa-times text-warning transition_200 text_hover_shadow'></i>
+                            <i className='me-3 poimer fas fa-trash text-danger transition_200 text_hover_shadow'></i>
                         </span>
                     </ul>
                 </div>
             </div>
         </div>
+        
     )
 }
+    
 
 export default App;
