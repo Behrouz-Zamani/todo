@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Fragment } from "react";
 const TopForm = () => {
 
     return (
-        <div>
+        <Fragment>
             <h4 className="text-center text-info textshdow">
                 Wellcome To mini React project
             </h4>
@@ -13,7 +13,7 @@ const TopForm = () => {
                     <buttom type="submit" className="btn btn-success ms-1">Save</buttom>
                 </div>
             </form>
-        </div>
+        </Fragment>
     );
 }
 export default TopForm
