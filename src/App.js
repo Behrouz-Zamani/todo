@@ -23,7 +23,7 @@ const App = () => {
         {
             id: 4,
             title: "Work # 4",
-            done:true
+            done:false
         },
     ])
 

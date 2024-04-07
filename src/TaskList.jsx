@@ -4,6 +4,17 @@ import { taskContext } from "./taskContext";
 const TaskList = () => {
     const { taskItem, setTaskItem } = useContext(taskContext);
 
+        const handleSetDoneTask =(id) => {
+            const index=taskItem.findIndex(t=> t.id === id);
+            let newTaskItems = [...taskItem]
+            newTaskItems[index].done = !newTaskItems[index].done;
+            setTaskItem(newTaskItems);
+        }
+
+        const handleDeletetask =(id)=> {
+            let newTasks = taskItem.filter(t=>t.id !== id);
+            setTaskItem (newTasks);
+        }
     if(taskItem.length){
         return (
 
@@ -15,11 +26,11 @@ const TaskList = () => {
                             <span>
                                 {
                                     t.done ? (
-                                    <i className='me-3 poimer fas fa-times text-warning transition_200 text_hover_shadow'></i>) :
-                                     (<i className='me-3 poimer fas fa-check text-success transition_200 text_hover_shadow'></i>
+                                    <i className='me-3 poimer fas fa-times text-warning transition_200 text_hover_shadow' onClick={()=>{return handleSetDoneTask(t.id)}}></i>) :
+                                     (<i className='me-3 poimer fas fa-check text-success transition_200 text_hover_shadow' onClick={()=>{return handleSetDoneTask(t.id)}}></i>
                                      )
                                 }
-                                <i className='me-3 poimer fas fa-trash text-danger transition_200 text_hover_shadow'></i>
+                                <i className='me-3 poimer fas fa-trash text-danger transition_200 text_hover_shadow' onClick={()=> {handleDeletetask(t.id)}}></i>
                             </span>
                         </li>
                     ))
