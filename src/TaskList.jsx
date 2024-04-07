@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
-import TopForm from "./TopForm";
 import { taskContext } from "./taskContext";
 
 const TaskList = () => {
-    const { taskItem, settaskItem } = useContext(taskContext);
+    const { taskItem, setTaskItem } = useContext(taskContext);
 
     if(taskItem.length){
         return (
@@ -28,7 +27,7 @@ const TaskList = () => {
 
             </ul>
 
-)
+        )
     }else{
         return(
             <h4 className="text-center text-danger">No Work Saved!</h4>

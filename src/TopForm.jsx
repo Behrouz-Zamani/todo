@@ -1,19 +1,33 @@
-import React, { Fragment } from "react";
+import React, { useContext, useState } from "react";
+ import { taskContext } from "./taskContext";
+
+
 const TopForm = () => {
 
+const[task,setTask] = useState("")
+const { taskItem, setTaskItem } = useContext(taskContext);
+
+const handleSettask = (event)=>{
+    setTask(event.target.value)
+}
+const handleAddTask = (event) => {
+    event.preventDefault()
+    setTaskItem([...taskItem , {id:Math.random() , title:task , done:false}])
+}
     return (
-        <Fragment>
+
+        <>
             <h4 className="text-center text-info textshdow">
                 Wellcome To mini React project
             </h4>
-
-            <form>
+            <form  onSubmit={handleAddTask}>
                 <div className="form-group d-flex">
-                    <input type="text" className="form-control" />
-                    <buttom type="submit" className="btn btn-success ms-1">Save</buttom>
+                    {/* {task} */}
+                    <input type="text" className="form-control" value={task} onChange={handleSettask} />
+                    <button type="submit" className="btn btn-success ms-1" >Save</button>
                 </div>
             </form>
-        </Fragment>
+        </>
     );
 }
 export default TopForm
