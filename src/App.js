@@ -35,7 +35,7 @@ const App = () => {
                 taskItem,
                 setTaskItem
             }}>
-               
+               <TopForm />
                 <TaskList />
             </taskContext.Provider>
             </div>
